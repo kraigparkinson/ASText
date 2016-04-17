@@ -33,7 +33,47 @@ script |ASText|
 		shouldEqual("foo", item 1 of theElements)
 		shouldEqual("bar", item 2 of theElements)
 		shouldEqual("fun,", item 3 of theElements)
+
+		set theText to "! :: @ # # $ //"
+		set theElements to ASText's getTextElements(theText, space)
+		shouldEqual(7, count of theElements)
+		shouldEqual("!", item 1 of theElements)
+		shouldEqual("::", item 2 of theElements)
+		shouldEqual("@", item 3 of theElements)
 		
 	end script	
+
+	script |missing value returns empty|
+		property parent : UnitTest(me)
+		
+		set theElements to ASText's getTextElements(missing value, ":")
+		shouldEqual(0, count of theElements)
+	end script
 	
+end script
+
+script |StringObj|
+	property parent : TestSet(me)
+	
+	on setUp()
+	end setUp
+	
+	on tearDown()
+	end tearDown
+
+	script |replace text|
+		property parent : UnitTest(me)
+		
+		set aString to ASText's StringObj's makeString("Some text")
+		set aString to aString's replaceText(space, "")
+		shouldEqual("Sometext", aString's asText())
+	end script
+	
+	script |remove text|
+		property parent : UnitTest(me)
+		
+		set aString to ASText's StringObj's makeString("Some text")
+		set aString to aString's removeText(" text")
+		shouldEqual("Some", aString's asText())
+	end script
 end script
