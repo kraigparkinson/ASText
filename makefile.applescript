@@ -109,6 +109,7 @@ script install
 	set targetDir to joinPath(dir, "com.kraigparkinson")
 	set targetPath to joinPath(targetDir, "ASText.scptd")
 	
+	(*
 	if pathExists(targetPath) then
 		tell application "Terminal"
 			activate
@@ -119,7 +120,7 @@ script install
 				default button "Cancel" cancel button "Cancel"
 		end tell
 	end if
-	
+	*)
 	copyItem at "build/ASText.scptd" into targetDir with overwriting
 	ohai("ASText installed at" & space & targetPath)
 	

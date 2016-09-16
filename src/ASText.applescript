@@ -9,6 +9,10 @@ script StringObj
 	property parent : missing value
 	property textValue : missing value
 	
+	on make new StringObj with data theText
+		return makeString(theText)
+	end make
+	
 	on makeString(theText)
 		copy StringObj to aString
 		set aString's textValue to theText
