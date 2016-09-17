@@ -14,6 +14,7 @@ script StringObj
 	end make
 	
 	on makeString(theText)
+		log "Making string from text"
 		copy StringObj to aString
 		set aString's textValue to theText
 		return aString
