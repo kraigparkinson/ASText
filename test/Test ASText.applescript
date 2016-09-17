@@ -60,6 +60,13 @@ script |StringObj|
 	
 	on tearDown()
 	end tearDown
+	
+	script |as text|
+		property parent : UnitTest(me)
+		
+		set aString to ASText's StringObj's makeString("Some text")
+		shouldEqual("Some text", aString's asText())
+	end script
 
 	script |replace text|
 		property parent : UnitTest(me)
