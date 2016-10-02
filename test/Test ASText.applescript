@@ -64,7 +64,7 @@ script |StringObj|
 	script |as text|
 		property parent : UnitTest(me)
 		
-		set aString to ASText's StringObj's makeString("Some text")
+		set aString to ASText's makeStringObj("Some text")
 		shouldEqual("Some text", aString's asText())
 	end script
 
