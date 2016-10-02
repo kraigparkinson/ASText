@@ -30,7 +30,9 @@ script BuildASText
 	property name : "astext"
 	property description : "Build ASText"
 	
-	makeScriptBundle from "src/ASText.applescript" at "build" with overwriting
+	property destinationDir : "build/Script Libraries/com.kraigparkinson"
+	
+	makeScriptBundle from "src/ASText.applescript" at destinationDir with overwriting
 end script
 
 script build
@@ -121,7 +123,7 @@ script install
 		end tell
 	end if
 	*)
-	copyItem at "build/ASText.scptd" into targetDir with overwriting
+	copyItem at "build/Script Libraries/com.kraigparkinson/ASText.scptd" into targetDir with overwriting
 	ohai("ASText installed at" & space & targetPath)
 	
 end script
