@@ -71,7 +71,7 @@ script |StringObj|
 	script |replace text|
 		property parent : UnitTest(me)
 		
-		set aString to ASText's StringObj's makeString("Some text")
+		set aString to ASText's makeStringObj("Some text")
 		set aString to aString's replaceText(space, "")
 		shouldEqual("Sometext", aString's asText())
 	end script
@@ -79,7 +79,7 @@ script |StringObj|
 	script |remove text|
 		property parent : UnitTest(me)
 		
-		set aString to ASText's StringObj's makeString("Some text")
+		set aString to ASText's makeStringObj("Some text")
 		set aString to aString's removeText(" text")
 		shouldEqual("Some", aString's asText())
 	end script
