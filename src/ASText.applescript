@@ -136,6 +136,9 @@ on stripWhitespace(textValue)
 	return textValue
 end stripWhitespace
 
+-- From mklement0's post on StackOverflow
+-- http://stackoverflow.com/questions/997828/is-there-something-akin-to-regex-in-applescript-and-if-not-whats-the-alternat/12292190#12292190
+
 # SYNOPIS
 #   doesMatch(text, regexString) -> Boolean
 # DESCRIPTION
@@ -160,6 +163,9 @@ on doesMatch(s, regex)
     tell me to return "0" = (do shell script "export LANG='" & user locale of (system info) & ".UTF-8'; egrep -qx" & extraGrepOption & " " & quoted form of regex & " <<< " & quoted form of s & "; printf $?")
 end doesMatch
 
+
+-- From mklement0's post on StackOverflow
+-- http://stackoverflow.com/questions/997828/is-there-something-akin-to-regex-in-applescript-and-if-not-whats-the-alternat/12292190#12292190
 
 # SYNOPSIS
 #   getMatch(text, regexString) -> { overallMatch[, captureGroup1Match ...] } or {}
